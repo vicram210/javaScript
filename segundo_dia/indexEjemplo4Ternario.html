@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <label for="">Dime un numero</label>
+        <input type="number" name="numero" id="id_numero" onchange="mostrarNumero()">
+    </form>
+    <script>
+        const MAX_NUMERO = 10;
+        function mostrarNumero(){
+            const numero = document.getElementById('id_numero').value;
+
+            // let resultado = (numero > MAX_NUMERO) ? "Es mayor": (numero == MAX_NUMERO) ?  "Es igual":"Es menor";
+            let resultado = "Es mayor"
+            
+            if(numero < MAX_NUMERO){
+                resultado = "Es menor"
+            
+            } else if (numero == MAX_NUMERO){
+                resultado = "Es igual"
+           
+            }
+            
+            alert(resultado)
+        }
+    </script>
+</body>
+</html>

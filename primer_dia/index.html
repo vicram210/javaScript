@@ -38,8 +38,13 @@
     }
 
     function multiplicarPor10(){
-        const cantidad = document.getElementById('id_cantidad').value;
-        const resultado = cantidad*10;
+        let cantidad = document.getElementById('id_cantidad').value; //Siempre será string
+        let tipo = typeof(cantidad);
+        console.log("El tipo de cantidad es: " + tipo);
+        cantidad = cantidad * 1; //Transforma de string a number
+        tipo = typeof(cantidad);
+        console.log("Ahora el tipo de cantidad es: " + tipo);
+        const resultado = cantidad* MAX_NUM_USUARIOS;
         document.getElementById("id_resultado").value = resultado;
     }
 </script>
