@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <label for="">Dime un numero</label>
+        <input type="number" name="numero" id="id_numero" onchange="mostrarNumero()">
+        <label for="">Resultado</label>
+        <input name="resultado" id="id_resultado" readonly>
+    </form>
+    <script>
+        const MAX_NUMERO = 10;
+        function mostrarNumero(evt){
+            const numero = document.getElementById('id_numero').value * 1;
+            let resultado = "Sin resultado";
+            if(isNaN(numero)){
+                resultado = "No es un numero";
+            }
+            switch(numero){
+                case 0:
+                    resultado = "Es cero";
+                    break;
+
+                case 1:
+                    resultado = "Es uno"
+                    break;
+
+                default:
+                    resultado = "Es otro numero"
+                    break;
+            }
+            document.getElementById('id_resultado').value = resultado;
+        }
+
+        
+    </script>
+</body>
+</html>

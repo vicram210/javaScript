@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 1</title>
+</head>
+
+<body>
+
+    <label for="resultado">Resultado</label>
+    <input type="text" name="resultado" id="id_resultado" readonly>
+
+</body>
+
+<script>
+
+    let valor;
+    
+    // let resultado = (valor == 0) ? "Es cero" : "No es cero";
+    //let resultado = "No es cero"
+    resultado = valor ?? "Esta sin definir";
+    resultado = valor ?? 0;
+    
+    document.getElementById("id_resultado").value = resultado;
+    
+</script>
+
+</html>
