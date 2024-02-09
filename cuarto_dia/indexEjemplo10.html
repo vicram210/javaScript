@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 1</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    let persona = {
+        nombre: 'Pepe',
+        edad: 25,
+        direccion : {
+            calle: 'Calle de la piruleta',
+            numero: 3,
+            piso: 2,
+            puerta: 'A'
+        },
+        saludar: function() {
+            console.log('Hola, me llamo ' + this.nombre + ' y tengo ' + this.edad + ' años')
+        },
+        sexo: 'Hombre'
+    }
+
+    
+    let miPerro = {
+        nombre: 'Rufus',
+        edad: 3,
+        raza: 'Pastor Alemán',
+        ladrar: function () {
+            let ladrido = '';
+            for (let i = 0; i < this.edad; i++){
+                ladrido += 'guau ';
+            }
+
+            return(ladrido)
+        }
+    }
+      
+    
+    
+    console.log(persona)
+    console.log("Mi perro se llama " + miPerro.nombre)
+    console.log("Y mi perro hace " + miPerro.ladrar())
+
+</script>
+
+</html>
