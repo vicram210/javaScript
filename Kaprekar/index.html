@@ -6,16 +6,66 @@
     <title>Document</title>
 </head>
 <body>
-    
+
 </body>
 <script>
 
-    let numero = prompt('Introduce un numero'); //Esto es un number
-                        //El prompt siempre será un String
-    let numeroComoCadena = `${numero}`; //Esto es un string
-    console.log(typeof(numeroComoCadena))
-    console.log(numeroComoCadena)
+    function numeroDescendente(numero){
+        numero = numero + '';
+        const tabla = numero.split(''); //Colocar cada numero en cada casilla
+        const tablaOrdenada = tabla.sort(function(a, b){return b - a}); //Ordenar la tabla de forma descendente
+
+        const tablaString = tablaOrdenada.join('');
+        const tablaNum = Number(tablaString);
+        
+        return tablaNum;
+    }
+
+    function numeroAscendente(numero){
+        numero = numero + '';
+        const tabla = numero.split(''); //Colocar cada numero en cada casilla
+        const tablaOrdenada = tabla.sort(function(a, b){return a - b});; //Ordenar la tabla de forma ascendente
+
+        const tablaString = tablaOrdenada.join('');
+        const tablaNum = Number(tablaString);
+
+        return tablaNum;
+    }
 
 
+    let numero = prompt('Introduce un número'); //Es un string
+
+    let valoresAceptados = /^[0-9]+$/;
+
+    if(!numero.match(valoresAceptados)){
+        console.log('Tienen que ser numeros')
+
+    } else if(numero.length != 4){
+        console.log('El numero tiene que tener 4 digitos')
+
+    } 
+
+    let contador = 0;
+    let numeroCalculado = 0;
+
+    while(numero != 6174){
+
+    const tablaDescendente = numeroDescendente(numero);
+    const tablaAscendente = numeroAscendente(numero);
+    
+    numero = numeroCalculado;
+
+    numeroCalculado = tablaDescendente - tablaAscendente;
+
+    
+
+    console.log(numero + ' -> ' + numeroCalculado)
+
+    contador++;
+
+    }
+
+    console.log('Nos a costado ' + contador + ' intentos')
+    
 </script>
 </html>
