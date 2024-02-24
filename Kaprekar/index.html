@@ -43,29 +43,30 @@
     } else if(numero.length != 4){
         console.log('El numero tiene que tener 4 digitos')
 
-    } 
+    } else {
+        let contador = 0;
+        let numeroCalculado = 0;
 
-    let contador = 0;
-    let numeroCalculado = 0;
+        while(numero != 6174){
 
-    while(numero != 6174){
+        const tablaDescendente = numeroDescendente(numero);
+        const tablaAscendente = numeroAscendente(numero);
+        
 
-    const tablaDescendente = numeroDescendente(numero);
-    const tablaAscendente = numeroAscendente(numero);
-    
-    numero = numeroCalculado;
+        numeroCalculado = tablaDescendente - tablaAscendente;
 
-    numeroCalculado = tablaDescendente - tablaAscendente;
+        console.log(numero + ' -> ' + numeroCalculado)
 
-    
+        numero = numeroCalculado;
 
-    console.log(numero + ' -> ' + numeroCalculado)
+        contador++;
 
-    contador++;
+        }
 
+        console.log('Nos a costado ' + contador + ' intentos')
     }
 
-    console.log('Nos a costado ' + contador + ' intentos')
+    
     
 </script>
 </html>
