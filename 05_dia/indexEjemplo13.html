@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" onsubmit="validaCampos()">
+
+        <div>
+            <label for="id_nombre">Nombre</label>
+            <input type="text" name="nombre" id="id_nombre" required>
+        </div>
+
+        <div>
+            <label for="id_apellido">Apellidos</label>
+            <input type="text" name="apellido" id="id_apellido" required>
+        </div>
+
+        <div>
+            <label for="id_edad">Edad</label>
+            <input type="number" name="edad" id="id_edad" required>
+        </div>
+
+        <div>
+            <label for="id_email">Email</label>
+            <input type="text" name="email" id="id_email" required>
+        </div>
+
+        <div>
+            <label for="id_telefono">Telefono</label>
+            <input type="text" name="telefono" id="id_telefono">
+        </div>
+
+        <label for="id_genero">Sexo</label>
+        <select name="sexo" id="id_sexo" onchange="seleccionSexo()">
+            <option value=""></option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+        </select>
+
+        <div style="display: none;" id="id_profesion_hombre">
+            <label for="id_trabajos_h">Que quieres ser de mayor? (Hombre)</label>
+            <p>
+                <input type="radio" name="genero" id="id_policia"> Policia
+                <input type="radio" name="genero" id="id_bombero"> Bombero
+                <input type="radio" name="genero" id="id_albanil"> Albañil
+            </p>
+        </div>
+
+            <br>
+            
+        <div style="display: none;" id="id_profesion_mujer">
+            <label for="id_trabajos_m">Que quieres ser de mayor? (Mujer)</label>
+            <p>
+                <input type="radio" name="genero" id="id_ingeniera"> Ingeniera
+                <input type="radio" name="genero" id="id_programadora"> Programadora
+                <input type="radio" name="genero" id="id_astronauta"> Astronauta
+            </p>
+        </div>
+
+        <div>
+            <button type="submit" onclick="validaCampos()">Enviar</button>
+        </div>
+    </form>
+
+    <div id="id_mensajes"></div>
+
+    <script>
+        function seleccionSexo(){
+            const sexo = document.getElementById("id_sexo").value
+
+            document.getElementById("id_profesion_hombre").style.display = "none";
+                document.getElementById("id_profesion_mujer").style.display = "none";
+
+            if(sexo === "hombre"){
+                document.getElementById("id_profesion_hombre").style.display = "block";
+            } 
+            
+            if(sexo === "mujer"){
+                document.getElementById("id_profesion_mujer").style.display = "block";
+            } 
+        }
+
+        function validaCampos(){
+            evt.preventDefault();
+            const nombre = document.getElementById("id_nombre").value;
+            const apellido = document.getElementById("id_apellido").value;
+            const edad = document.getElementById("id_edad").value;
+            const email = document.getElementById("id_email").value;
+            const telefono = document.getElementById("id_telefono").value;
+            const sexo = document.getElementById("id_sexo").value;
+            const profesion = document.getElementById("id_profesion").value;
+
+            if(edad < 18){
+                document.getElementById("id_mensajes").innerHTML = "Eres menor de edad";
+                docuemnt.getElementById("id_mensajes").style.color = "white"
+                docuemnt.getElementById("id_mensajes").style.backgroundcolor = "red"
+                evt.preventDefault();
+            }
+        }
+
+    </script>
+</body>
+</html>

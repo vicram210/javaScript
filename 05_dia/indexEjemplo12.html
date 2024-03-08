@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body style="background-color: yellow;">
+  <label id="id_etiqueta">Resultado</label>
+  <input type="text" name="resultado" id="id_resultado" readonly>
+  <input type="text" name="resultado"  value = "Valor 2" readonly>
+</body>
+
+<script>
+
+  let valor = null;
+
+  // let resultado =  (valor == 0) ? "Es cero": "No es cero";
+  // let resultado = "No es cero";
+  // let resultado =  valor ?? "Esta sin definir";
+  let resultado =  valor ?? 121212;
+
+  function cambiarColor(color) {
+    document.body.style.backgroundColor = color;
+  }
+
+  document.getElementById("id_resultado").value = resultado;
+  
+  let arrayResultado = document.getElementsByName("resultado");
+  console.log(arrayResultado[1].value);
+
+  //document.body.style.backgroundColor = "red";
+
+  window.onload = function(){ //Cuando termina de cargar toda la pagina se ejecuta
+
+    setTimeout(function() {
+    cambiarColor('red');
+    }, 3000);
+
+    setTimeout(function() {
+    cambiarColor('blue');
+    }, 5000);
+
+    setTimeout(function() {
+    cambiarColor('green');
+    }, 1000);
+
+
+
+  }
+  
+</script>
+
+</html>
