@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación del DOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .item {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        form {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Manipulación del DOM</h1>
+    </header>
+    <div id="container">
+        <!-- <h2>Agregar Elementos</h2>
+        <button id="addButton">Agregar Nuevo Elemento</button> -->
+        <ul id="itemList">
+            <li class="item">Elemento 1</li>
+            <li class="item">Elemento 2</li>
+            <li class="item">Elemento 3</li>
+        </ul>
+
+        <form>
+            <h2>Formulario</h2>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Edad:</label>
+            <input type="number" id="age" name="age" min="0" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <label for="gender">Género:</label>
+            <select id="gender" name="gender">
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+                <option value="other">Otro</option>
+            </select>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    <script>
+        // let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // console.log(a);
+
+        // for (let i = 0; i < a.length; i++) {
+        //     console.log(a[i] + 10);
+        // }
+
+        // console.log(a);
+
+        // para cada elemento ejecuta alert
+        // const a = ["Bilbo", "Gandalf", "Nazgul"];
+        const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // a.forEach(item => console.log(item + 10));
+        console.log('Sin index');
+        a.forEach(
+            function (item) {
+                console.log(item + 10);
+                // console.log(item, index);
+            });
+
+        console.log('Con index');
+        a.forEach(
+            function (item, index) {
+                console.log(`He sumado 10 al indice ${index} y es igual a ${item + 10}`);
+                // console.log(item, index);
+            });
+
+        console.log('Con el array tambien');
+        a.forEach(
+            function (item, index) {
+                console.log(`He sumado 10 al indice ${index} y es igual a ${item + 10} al array ${a}`);
+                // console.log(item, index);
+            });
+
+        console.log('USANDO LA FUNCION FLECHA');
+        a.forEach((item, index) => {
+            console.log(`He sumado 10 al indice ${index} y es igual a ${item + 10} al array ${a}`);
+            // console.log(item, index);
+        });
+
+        console.log('USANDO LA FUNCION FLECHA con un solo parametro');
+        a.forEach(item => console.log(`He sumado 10 y es igual a ${item + 10}`));
+
+
+
+
+    </script>
+</body>
+
+</html>
