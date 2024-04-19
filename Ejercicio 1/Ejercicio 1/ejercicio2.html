@@ -11,8 +11,15 @@
 
 <script type="text/javascript">
 function muestra() {
-    document.getElementById("enlace").style.display = "none";
-    document.getElementById("adicional").style.display = "block";
+    
+    let elemento = document.getElementById('adicional');
+    elemento.className = 'visible';
+
+    let enlace = document.getElementById('enlace');
+    enlace.className = 'oculto';
+    
+    // document.getElementById("enlace").style.display = "none";
+    // document.getElementById("adicional").style.display = "block";
 }
 </script>
 </head>

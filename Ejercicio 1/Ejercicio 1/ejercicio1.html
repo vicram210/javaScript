@@ -20,8 +20,16 @@ window.onload = function() {
     }
 
     // Numero de enlaces que enlazan a http://prueba
-    const enlacesAHttpPrueba = document.querySelectorAll('a[href="http://prueba/"]'); //Obtiene un numero que es la cantidad apariciones de ese enlace
-    console.log("Número de enlaces que enlazan a http://prueba:", enlacesAHttpPrueba.length);
+    let numeroEnlaces = 0
+    for (let i = 0 ; i < enlaces.length; i++){
+
+        if(enlaces[i].href.includes('http://prueba/')){
+            console.log('Enlace que apunta a http://prueba');
+            numeroEnlaces++;
+        }
+    }
+        // const enlacesAHttpPrueba = document.querySelectorAll('a[href="http://prueba/"]'); //Obtiene un numero que es la cantidad apariciones de ese enlace
+        // console.log("Número de enlaces que enlazan a http://prueba:", enlacesAHttpPrueba.length);
 
     // Número de enlaces del tercer párrafo
     const tercerParrafo = document.getElementsByTagName('p')[2]; //Busca las etiquetas <p>
